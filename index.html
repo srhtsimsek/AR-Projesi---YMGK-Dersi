@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serhat Şimşek</title>
+    <title>Serhat Şimşek - Kişisel Sayfa</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -44,6 +44,7 @@
             color: #fff;
         }
         .image-container {
+            position: relative;
             flex-grow: 1;
             display: flex;
             justify-content: center;
@@ -58,6 +59,23 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        .youtube-button {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .youtube-button:hover {
+            background-color: #cc0000;
+        }
     </style>
 </head>
 <body>
@@ -67,17 +85,18 @@
 </header>
 
 <nav>
-    <a href="https://github.com" target="_blank">GitHub Proje Linki</a>
-    <a href="planlama_ve_gereksinimler.pdf" download>Planlama ve Gereksinimler</a>
-    <a href="uml_diyagramı.pdf" download>UML Diyagramı</a>
-    <a href="rams_analiz.pdf" download>RAMS Analizi</a>
-    <a href="swot_analiz.pdf" download>SWOT Analizi</a>
-    <a href="#ths">THS (Teknoloji Hazırlık Seviyeleri)</a>
-    <a href="apk_dosyası.apk" download>APK Dosyası</a>
+    <a href="https://github.com/srhtsimsek/AR-Projesi---YMGK-Dersi" target="_blank">GitHub</a>
+    <a href="yazılım gereksinim analizi.pdf" download>Yazılım Gereksinim Analizi</a>
+    <a href="uml diyagram.png" download>UML Diyagramı</a>
+    <a href="RAMS Analizi.png" download>RAMS Analizi</a>
+    <a href="SWOT analizi.png" download>SWOT Analizi</a>
+    <a href="teknoloji hazırlık seviyeleri final.numbers">THS (Teknoloji Hazırlık Seviyeleri)</a>
+    <a href="Ar Projesi.apk" download>APK Dosyası</a>
 </nav>
 
 <div class="image-container">
-    <img src="ss.png" alt="Uygulamanın canlıda görüntüsü">
+    <img src="ss.png" alt="Resim Açıklaması">
+    <a href="https://www.youtube.com/watch?v=9Yry8hGUH-o" target="_blank" class="youtube-button">YouTube'a Git</a>
 </div>
 
 </body>
