@@ -3,102 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serhat Şimşek - Kişisel Sayfa</title>
+    <title>Serhat Şimşek - AR Projesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --bg: #0f172a;
+            --text: #e2e8f0;
+            --primary: #6366f1;
+            --secondary: #1e293b;
+            --accent: #38bdf8;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, var(--bg), #1e1b4b);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
+
         header {
-            background-color: #4a90e2;
-            color: #fff;
-            padding: 20px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
+            }
+        }
+
         nav {
-            display: flex;
-            justify-content: center;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            padding: 10px 0;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.5rem;
+            padding: 0 1rem;
+        }
+
         nav a {
-            margin: 0 15px;
             text-decoration: none;
-            color: #4a90e2;
-            font-weight: bold;
-            transition: color 0.3s, background-color 0.3s;
-            padding: 10px 20px;
-            border-radius: 5px;
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            backdrop-filter: blur(5px);
+            font-size: 0.85rem; 
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
+
         nav a:hover {
-            background-color: #4a90e2;
-            color: #fff;
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
         }
-        .image-container {
-            position: relative;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+
+        @media (max-width: 1200px) {
+            .nav-container {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            
+            nav a {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.8rem;
+            }
         }
-        .image-container img {
-            width: 80%;
-            max-width: 600px;
-            height: auto;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
         }
-        .youtube-button {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ff0000;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
+
+        .project-section {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
         }
-        .youtube-button:hover {
-            background-color: #cc0000;
+
+        .project-section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            color: var(--text);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                width: calc(50% - 0.5rem);
+                text-align: center;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>AR Projesi</h1>
+        <p>YMH459 YAZILIM MÜH. GÜNCEL KONULAR</p>
+    </header>
 
-<header>
-    <h1>Serhat Şimşek 210541046</h1>
-</header>
+    <nav>
+        <div class="nav-container">
+            <a href="https://youtu.be/your-video-id" target="_blank">YouTube</a>
+            <a href="https://github.com/srhtsimsek/AR-Projesi---YMGK-Dersi" target="_blank">GitHub</a>
+            <a href="yazılım gereksinim analizi.pdf" download>Yazılım Gereksinim Analizi</a>
+            <a href="uml diyagram.png" download>UML Diyagramı</a>
+            <a href="RAMS Analizi.png" download>RAMS Analizi</a>
+            <a href="SWOT analizi.png" download>SWOT Analizi</a>
+            <a href="teknoloji hazırlık seviyeleri final.numbers">THS</a>
+            <a href="Ar Projesi.apk" download>APK Dosyası</a>
+            <a href="https://trello.com/b/ZphlTIBr" target="_blank">Trello</a>
+        </div>
+    </nav>
 
-<nav>
-    <a href="https://github.com/srhtsimsek/AR-Projesi---YMGK-Dersi" target="_blank">GitHub</a>
-    <a href="yazılım gereksinim analizi.pdf" download>Yazılım Gereksinim Analizi</a>
-    <a href="uml diyagram.png" download>UML Diyagramı</a>
-    <a href="RAMS Analizi.png" download>RAMS Analizi</a>
-    <a href="SWOT analizi.png" download>SWOT Analizi</a>
-    <a href="teknoloji hazırlık seviyeleri final.numbers">THS (Teknoloji Hazırlık Seviyeleri)</a>
-    <a href="Ar Projesi.apk" download>APK Dosyası</a>
-    <a href="https://trello.com/b/ZphlTIBr" target="_blank">Trello</a>
-</nav>
+    <main>
+        <section class="project-section">
+            <h2>Proje Hakkında</h2>
+            <p>Bu proje, YMH459	YAZILIM MÜH. GÜNCEL KONULAR dersi kapsamında geliştirilmiştir. Yukarıdaki bağlantılardan projeye ait dokümanlara ve kaynak kodlara ulaşabilirsiniz.</p>
+        </section>
+    </main>
 
-<div class="image-container">
-    <img src="ss.png" alt="Resim Açıklaması">
-    <a href="https://www.youtube.com/watch?v=9Yry8hGUH-o" target="_blank" class="youtube-button">YouTube'a Git</a>
-</div>
-
+    <footer>
+        <p>&copy; 2024 Serhat Şimşek - Tüm hakları saklı değildir..</p>
+    </footer>
 </body>
 </html>
